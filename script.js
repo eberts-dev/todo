@@ -74,10 +74,16 @@ const todo = {
 	},
 
 	save() {
-		localStorage.setItem(
-			'todo',
-			document.querySelector('.todo__items').innerHTML
+		const items = Array.from(document.querySelectorAll('.todo__item')).map(
+			item => {
+				return {
+					text: item.querySelector('.todo__task').textContent,
+					state: item.dataset.todoState,
+					date: item.querySelector('.todo__date').textContent,
+				}
+			}
 		)
+		localStorage.setItem('todo', JSON.stringify(items))
 	},
 }
 
