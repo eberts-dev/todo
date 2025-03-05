@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>todo</title>
+</head>
+
+<body>
+	<div class="todo">
+		<h1>Создать список дел</h1>
+		<div class="todo__wrapper">
+			<div class="todo__input">
+				<input class="todo__text" type="text">
+				<span class="todo__add"></span>
+			</div>
+			<select class="todo__options">
+				<option value="active">активные</option>
+				<option value="completed">завершённые</option>
+				<option value="deleted">удалённые</option>
+			</select>
+		</div>
+		<ul class="todo__items" data-todo-option="active"></ul>
+	</div>
+	<script src='script.js'></script>
+</body>
+
+</html>
