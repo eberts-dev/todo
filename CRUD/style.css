@@ -6,9 +6,16 @@
 
 :root {
 	//colors
-	--btns: rgb(77, 180, 128);
-	--main-bg-color: rgb(61, 90, 236);
+	--buttons: #FF6103;
 	--header-txt: #fff;
+	--bg: #FFCA75;
+	--add-btn: #FF8842;
+	--main-bg-color: rgb(61, 90, 236);
+	--font-deleted: #b1baf1;
+
+	--completed: #03E5AC;
+	--negative: #A63E01;
+	--deleted: #2d49da;
 }
 
 body {
@@ -35,16 +42,24 @@ h1 {
 
 .todo {
 	margin: 15em auto;
-	width: 500px;
+	max-width: 500px;
+	@media screen and (max-width: 500px) {
+		padding: 0 20px;
+	}
 }
 
 .todo__wrapper {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
+	row-gap: 20px;
 }
 
 .todo__input {
 	position: relative;
+	@media screen and (max-width: 500px) {
+		width: 100%;
+	}
 }
 
 .todo__text,
@@ -54,6 +69,9 @@ h1 {
 	font-size: 16px;
 	padding: 10px;
 	width: 340px;
+	@media screen and (max-width: 500px) {
+		width: 100%;
+	}
 }
 
 .todo__options {
@@ -61,8 +79,11 @@ h1 {
 }
 
 .todo__options {
-	background-color: var(--btns);
+	background: var(--add-btn);
 	color: white;
+	@media screen and (max-width: 500px) {
+		width: 100%;
+	}
 }
 
 .todo__options:focus,
@@ -78,28 +99,28 @@ h1 {
 }
 
 .todo__text:focus-visible {
-	border: 1px solid #166866;
+	border: 1px solid var(--add-btn);
 	outline: none;
 }
 
 .todo__add {
 	position: absolute;
-	top: 46%;
+	top: 49%;
 	right: 10px;
 	width: 26px;
 	height: 26px;
-	background-color: #166866;
+	background: var(--add-btn);
 	transform: translateY(-50%);
 	cursor: pointer;
 	transition: background-color 0.15s ease-in;
 }
 
 .todo__add:hover {
-	background-color: #000;
+	background-color: var(--deleted);
 }
 
 .todo__text:disabled + .todo__add {
-	background-color: #000;
+	background-color: var(--deleted);
 	cursor: default;
 	opacity: 0.5;
 }
@@ -119,7 +140,7 @@ h1 {
 
 .todo__item {
 	position: relative;
-	background: #f1f1f1;
+	background: var(--bg);
 	border-radius: 6px;
 	margin-bottom: 10px;
 	padding: 10px;
@@ -134,7 +155,6 @@ h1 {
 	right: 8px;
 	width: 32px;
 	height: 32px;
-	background-color: #024263;
 	border-radius: 4px;
 	cursor: pointer;
 	opacity: 0.7;
@@ -153,10 +173,6 @@ h1 {
 	content: '';
 }
 
-.todo__action_complete {
-	background-color: #166866;
-}
-
 .todo__action_restore::before {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3e%3csvg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C9.61061 4 7.46589 5.04751 6 6.70835C5.91595 6.80358 5.83413 6.90082 5.75463 7M12 8V12L14.5 14.5M5.75391 4.00391V7.00391H8.75391' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
 }
@@ -171,12 +187,11 @@ h1 {
 
 .todo__action_delete {
 	right: 45px;
-	background-color: #9c1a15;
 }
 
 [data-todo-state='completed'] {
 	text-decoration: line-through;
-	background-color: #f1f8ed;
+	background-color: var(--completed);
 }
 
 [data-todo-state='completed'] .todo__date > span {
@@ -184,7 +199,7 @@ h1 {
 }
 
 [data-todo-state='deleted'] {
-	background-color: #ffdada;
+	background-color: var(--deleted);
 }
 
 [data-todo-state='active'] .todo__action_restore,
@@ -194,17 +209,18 @@ h1 {
 }
 
 [data-todo-state='deleted'] .todo__task {
-	color: #009688;
+	color: var(--font-deleted);
 	font-size: 18px;
 }
 
 .todo__task {
-	color: #009688;
+	color: var(--negative);
 	font-size: 18px;
 }
 
 [data-todo-state='deleted'] .todo__action_restore {
 	right: 8px;
+	background: var(--buttons);
 }
 
 [data-todo-option='active'] .todo__item:not([data-todo-state='active']),
@@ -217,7 +233,7 @@ h1 {
 	position: relative;
 	top: 5px;
 	gap: 10px;
-	color: #7e7e7eee;
+	color: var(--negative);
 	display: flex;
 	font-size: 13px;
 	padding-top: 10px;

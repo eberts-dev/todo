@@ -44,7 +44,7 @@ const todo = {
 		})
 		return `<li class="todo__item" data-todo-state="active">
               <span class="todo__task">
-                ${text}
+							${text}
                 <span class="todo__date" data-todo-date="${date}">
                   <span>добавлено: ${new Date()
 										.toLocaleString()
