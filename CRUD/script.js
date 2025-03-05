@@ -60,11 +60,12 @@ const todo = {
 	init() {
 		const fromStorage = localStorage.getItem('todo')
 		if (fromStorage) {
-			document.querySelector('.todo__items').innerHTML = fromStorage
+			const data = JSON.parse(fromStorage)
+
+			const todoItemsContainer = document.querySelector('.todo__items')
+			todoItemsContainer.innerHTML = ''
 		}
-		document
-			.querySelector('.todo__options')
-			.addEventListener('change', this.update)
+		document.querySelector('.todo__options').addEventListener('change', this.update)
 		document.addEventListener('click', this.action.bind(this))
 	},
 
