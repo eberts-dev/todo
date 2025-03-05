@@ -59,7 +59,8 @@ const todo = {
 	init() {
 		const fromStorage = localStorage.getItem('todo')
 		if (fromStorage) {
-			document.querySelector('.todo__items').innerHTML = fromStorage
+			const todoItemsContainer = document.querySelector('.todo__items')
+			todoItemsContainer.innerHTML = ''
 		}
 		document
 			.querySelector('.todo__options')

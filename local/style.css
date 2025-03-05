@@ -27,16 +27,24 @@ h1 {
 
 .todo {
 	margin: 15em auto;
-	width: 500px;
+	max-width: 500px;
+	@media screen and (max-width: 500px) {
+		padding: 0 20px;
+	}
 }
 
 .todo__wrapper {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
+	row-gap: 20px;
 }
 
 .todo__input {
 	position: relative;
+	@media screen and (max-width: 500px) {
+		width: 100%;
+	}
 }
 
 .todo__text,
@@ -46,15 +54,18 @@ h1 {
 	font-size: 16px;
 	padding: 10px;
 	width: 340px;
+	@media screen and (max-width: 500px) {
+		width: 100%;
+	}
 }
 
 .todo__options {
 	width: 150px;
-}
-
-.todo__options {
 	background: #166866;
 	color: white;
+	@media screen and (max-width: 500px) {
+		width: 100%;
+	}
 }
 
 .todo__options:focus,
