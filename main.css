@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--main-bg: linear-gradient(90deg, rgba(33,33,32,1) 0%, rgba(62,90,224,1) 100%);
+	--h1-text: wheat; 
+	--link: white;
+}
+
+body {
+	background: var(--main-bg);
+	font-family: "Open Sans", sans-serif;
+}
+
+main {
+	padding: 5rem;
+	max-width: 900px;
+	margin: 0 auto;
+	@media screen and (max-width: 480px) {
+		padding: 2rem;
+	}
+}
+
+h1 { 
+	text-align: center;
+	padding: 0 0 7rem;
+	font-size: 4rem;
+	@media screen and (max-width: 590px) {
+		padding: 0 0 2rem;
+		font-size: 2rem;
+	}
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	justify-content: space-between;
+}
+
+li {
+	display: block;
+	border-radius: 0.5rem;
+	border: 2px solid var(--h1-text);
+}
+
+a {
+	text-decoration: none;
+	color: var(--link);
+	cursor: pointer;
+	padding: 1rem;
+	display: block;
+	border-radius: 0.5rem;
+}
+
+a:hover {
+	background: #6526f7;
+	transition: .2s;
+}
+
+svg {
+	width: 10rem;
+	fill: var(--h1-text);
+	@media screen and (max-width: 590px) {
+		width: 100%;
+	}
+}
+
+span {
+	display: block;
+	text-align: center;
+	font-size: 2em;
+}
+
+h1 {
+	color: var(--h1-text);
+}
