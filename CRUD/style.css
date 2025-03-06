@@ -7,6 +7,7 @@
 :root {
 	//colors
 	--buttons: #FF6103;
+	--placeholder-color: #A66701;
 	--header-txt: #fff;
 	--bg: #FFCA75;
 	--add-btn: #FF8842;
@@ -60,6 +61,10 @@ h1 {
 	@media screen and (max-width: 500px) {
 		width: 100%;
 	}
+}
+
+input::placeholder {
+	color: var(--placeholder-color);
 }
 
 .todo__text,
