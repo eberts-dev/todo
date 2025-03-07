@@ -1,3 +1,3 @@
 # todo
 
-small todo list - https://eberts-dev.github.io/todo/
+Проект - https://eberts-dev.github.io/todo/
